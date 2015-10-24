@@ -5,7 +5,7 @@ machine:
     version: 0.12.2
 deployment:
   production:
-    branch: lang-ja
+    branch: master
     commands:
       - git config --global user.name "Circle CI"
       - git config --global user.email "kawakazu80+vuejsjp@gmail.com"
@@ -19,9 +19,4 @@ deployment:
 general:
   branches:
     only:
-      - lang-ja
-notify:
-  webhooks:
-    # A list of hook hashes, containing the url field
-    # gitter hook
-    - url: https://webhooks.gitter.im/e/909182d38e961fd28993
+      - master

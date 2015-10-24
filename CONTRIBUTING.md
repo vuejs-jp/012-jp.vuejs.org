@@ -7,10 +7,10 @@
 ## 貢献方法
 
 1. このレポジトリをフォークします!
-2. `lang-ja` ブランチからトピックブランチを作成します: `git branch my-topic-branch lang-ja`
+2. `master` ブランチからトピックブランチを作成します: `git branch my-topic-branch lang-ja`
 3. 変更をコミットします: `git commit -am 'Fix some files'`
 4. フォークした自分のレポジトリに Push します: `git push origin my-topic-branch`
-5. プルリクエストを `vuejs-jp/vuejs.org` の `lang-ja` ブランチに送ります
+5. プルリクエストを `vuejs-jp/012-jp.vuejs.org` の `lang-ja` ブランチに送ります
 
 
 ## 翻訳のゆらぎ & トーン

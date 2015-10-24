@@ -1,4 +1,6 @@
-# vuejs-jp/vuejs.org
+# vuejs-jp/012-jp.vuejs.org
+
+このリポジトリは Vue.js v0.12 向けのドキュメントを管理しているレポジトリです。
 
 このサイトは [hexo](http://zespia.tw/hexo) で構築されています。サイトコンテンツは `source` の位置に markdown フォーマットで書かれています。プルリクエスト、歓迎します！
 

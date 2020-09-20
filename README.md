@@ -38,5 +38,6 @@ $ hexo server
 - [pocke](https://github.com/pocke)
 - [showwin](https://github.com/showwin)
 - [sunya9](https://github.com/sunya9)
+- [tnir](https://github.com/tnir)
 - [y-yagi](https://github.com/y-yagi)
 - [zakuro9715](https://github.com/zakuro9715)

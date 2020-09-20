@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta name="generator" content="Hexo 3.9.0">
+        <title>概要 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Code+Pro|Dosis:300,500" rel="stylesheet" type="text/css">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "api"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link">ガイド</a></li>
+<li><a href="/api/" class="nav-link current">API リファレンス</a></li>
+<li><a href="/examples/" class="nav-link">例</a></li>
+<li><a href="/blog/" class="nav-link">ブログ(英語)</a></li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" class="nav-link">GitHub</a></li>
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link">ガイド</a></li>
+<li><a href="/api/" class="nav-link current">API リファレンス</a></li>
+<li><a href="/examples/" class="nav-link">例</a></li>
+<li><a href="/blog/" class="nav-link">ブログ(英語)</a></li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        
+        <h2>API</h2>
+        
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="/api/index.html" class="sidebar-link current">概要</a>
+                </li>
+            
+                <li>
+                    <a href="/api/options.html" class="sidebar-link">コンポーネントオプション</a>
+                </li>
+            
+                <li>
+                    <a href="/api/instance-properties.html" class="sidebar-link">インスタンスプロパティ</a>
+                </li>
+            
+                <li>
+                    <a href="/api/instance-methods.html" class="sidebar-link">インスタンスメソッド</a>
+                </li>
+            
+                <li>
+                    <a href="/api/global-api.html" class="sidebar-link">グローバル API</a>
+                </li>
+            
+                <li>
+                    <a href="/api/directives.html" class="sidebar-link">ディレクティブ</a>
+                </li>
+            
+                <li>
+                    <a href="/api/filters.html" class="sidebar-link">フィルタ</a>
+                </li>
+            
+                <li>
+                    <a href="/api/elements.html" class="sidebar-link new">特別な要素</a>
+                </li>
+            
+            <li><a href="http://011.vuejs.org">0.11 のドキュメントをお探しですか？</a></li>
+            <li style="margin:10px 0 3px">
+              <script data-gittip-username="yyx990803" data-gittip-widget="button" src="//gttp.co/v1.js"></script>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="content api with-sidebar">
+    <h1>概要</h1>
+    <div id="ad">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
+    </div>
+    <h2 id="Vue-コンストラクタ"><a href="#Vue-コンストラクタ" class="headerlink" title="Vue コンストラクタ"></a>Vue コンストラクタ</h2><p><code>Vue</code> コンストラクタは、Vue.js の中核です。これは、Vue インスタンスの生成を可能にする、コンストラクタ関数です。Vue インスタンスの生成は、簡単です:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123; <span class="comment">/* options */</span> &#125;)</span><br></pre></td></tr></table></figure>
+<p>Vue インスタンスを生成するときは、DOM 要素に関する情報やデータオブジェクト、mixin メソッド、ライフサイクルコールバックなどの情報を含むオプションオブジェクトを渡す必要があります。すべてのリストは、<a href="/api/options.html">コンポーネントオプション</a>を参照してください。</p>
+<p>各 Vue インスタンスは、本質的には ViewModel です（それ故に、変数名 <code>vm</code> がドキュメントの各所で見られます）。各インスタンスは関連する DOM 要素 <code>$el</code> をもち、これはおおまかに言って MVVM の V に該当します。また、関連する JavaScript オブジェクト <code>$data</code> も持っており、これは MVVM の M に該当します。M における変更によって、V が更新されます。Two way (双方向)バインディングでは、V におけるユーザーの入力が M の更新を引き起こします。Vue インスタンスで利用可能なプロパティについてより詳細な説明は、<a href="/api/instance-properties.html">インスタンスプロパティ</a>を参照してください。</p>
+<p>それぞれの Vue インスタンスは、データ監視、イベント通信や DOM 操作をするいくつかの<a href="/api/instance-methods.html">インスタンスメソッド</a>を持っています。</p>
+<p><code>Vue</code> コンストラクタそのものは<a href="/api/global-api.html">グローバル API</a> を公開しており、<code>Vue</code> クラスの拡張や、グローバル設定、コンポーネントやディレクティブ、フィルタなどのグローバルなカスタムの資産を登録することを可能としています。</p>
+<h2 id="初期化"><a href="#初期化" class="headerlink" title="初期化"></a>初期化</h2><p>インスタンスの生成の際に <code>el</code> オプションが与えられた場合、Vue インスタンスは直ちにコンパイルの段階に入ります。さもなければ、コンパイルが開始される前に、<code>vm.$mount()</code> が呼ばれるのを待ちます。コンパイルの段階の間に、Vue は DOM をひと通り見て、遭遇したディレクティブを収集します。一旦紐付けられると、それらの DOM ノードは Vue インスタンスによって管理されていると言えます。ひとつの DOM ノードはひとつの Vue インスタンスによってのみ管理され、一回より多くコンパイルされるべきではありません。</p>
+<h2 id="データのプロキシ"><a href="#データのプロキシ" class="headerlink" title="データのプロキシ"></a>データのプロキシ</h2><p>Vue インスタンスはその <code>$data</code> オブジェクトにプロキシアクセスするため、もし <code>vm.$data.msg</code> があれば、<code>vm.msg</code> としてもアクセスすることができます。これは少し不思議に見えますが、完全に省略可能です。より明示的なデータアクセスのために <code>vm.$data.msg</code> とすることも可能です。しかし、<code>vm</code> は他の Vue インスタンスからはデータとして監視できないため、<code>vm</code> と <code>vm.$data</code> との違いに気をつけることは依然として重要です。</p>
+<p>データオブジェクトはひとつの Vue インスタンスのみに属する必要がないことも知っておくべきです。つまり、複数の ViewModel は <code>$data</code> の直下であろうと、ネストされた下のデータであろうと、同じデータを監視することができます。これは複数のコンポーネントが共有されたグローバルなオブジェクトの状態に反応しなければならないときに便利です。</p>
+
+    <div class="footer">間違いを見つけた、またはドキュメントに貢献したいですか？<a href="https://github.com/vuejs-jp/012-jp.vuejs.org" target="_blank">Github からこのサイトを Fork しましょう</a>！</div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tnir/vuejs-012-jp-outdated-docs-modal@012-jp-v2.1.0/prompt.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

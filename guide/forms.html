@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta name="generator" content="Hexo 3.9.0">
+        <title>フォームのハンドリング - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Source+Code+Pro|Dosis:300,500" rel="stylesheet" type="text/css">
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link current">ガイド</a></li>
+<li><a href="/api/" class="nav-link">API リファレンス</a></li>
+<li><a href="/examples/" class="nav-link">例</a></li>
+<li><a href="/blog/" class="nav-link">ブログ(英語)</a></li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" class="nav-link">GitHub</a></li>
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link current">ガイド</a></li>
+<li><a href="/api/" class="nav-link">API リファレンス</a></li>
+<li><a href="/examples/" class="nav-link">例</a></li>
+<li><a href="/blog/" class="nav-link">ブログ(英語)</a></li>
+<li><a href="https://github.com/vuejs/vue" target="_blank" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        
+        <h2>ガイド</h2>
+        
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="/guide/installation.html" class="sidebar-link">インストール</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/index.html" class="sidebar-link">はじめに</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/directives.html" class="sidebar-link">ディレクティブ</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/filters.html" class="sidebar-link">フィルタ</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/list.html" class="sidebar-link">リスト表示</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/events.html" class="sidebar-link">イベントのリスニング</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/forms.html" class="sidebar-link current">フォームのハンドリング</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/computed.html" class="sidebar-link">Computed Properties</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/custom-directive.html" class="sidebar-link">カスタムディレクティブ</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/custom-filter.html" class="sidebar-link">カスタムフィルタ</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/components.html" class="sidebar-link">コンポーネントシステム</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/transitions.html" class="sidebar-link">トランジションシステム</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/application.html" class="sidebar-link">大規模アプリケーションの構築</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/extending.html" class="sidebar-link">Vue の拡張</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/best-practices.html" class="sidebar-link new">コツ & ベストプラクティス</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/faq.html" class="sidebar-link">FAQ</a>
+                </li>
+            
+            <li><a href="http://011.vuejs.org">0.11 のドキュメントをお探しですか？</a></li>
+            <li style="margin:10px 0 3px">
+              <script data-gittip-username="yyx990803" data-gittip-widget="button" src="//gttp.co/v1.js"></script>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="content guide with-sidebar">
+    <h1>フォームのハンドリング</h1>
+    <div id="ad">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script>
+    </div>
+    <h2 id="基礎"><a href="#基礎" class="headerlink" title="基礎"></a>基礎</h2><p>フォームの input 要素に two way (双方向)バインディングを作成するには、 <code>v-model</code> ディレクティブを使用します。 <code>v-model</code> ディレクティブは、input の type に基づき、要素を更新する正しい方法を自動的に選択します。</p>
+<p><strong>例</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- text --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line">    &#123;&#123;msg&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- checkbox --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"checked"</span>&gt;</span></span><br><span class="line">    &#123;&#123;checked ? "yes" : "no"&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- radio buttons --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"picked"</span> <span class="attr">value</span>=<span class="string">"one"</span> <span class="attr">v-model</span>=<span class="string">"picked"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"picked"</span> <span class="attr">value</span>=<span class="string">"two"</span> <span class="attr">v-model</span>=<span class="string">"picked"</span>&gt;</span></span><br><span class="line">    &#123;&#123;picked&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- select --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selected"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>one<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>two<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    &#123;&#123;selected&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- multiple select --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"multiSelect"</span> <span class="attr">multiple</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>one<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>two<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span>&gt;</span>three<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    &#123;&#123;multiSelect&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">pre</span>&gt;</span>data: &#123;&#123;$data | json 2&#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#demo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg      : <span class="string">'hi!'</span>,</span><br><span class="line">    checked  : <span class="literal">true</span>,</span><br><span class="line">    picked   : <span class="string">'one'</span>,</span><br><span class="line">    selected : <span class="string">'two'</span>,</span><br><span class="line">    multiSelect: [<span class="string">'one'</span>, <span class="string">'three'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>結果</strong></p>
+<p><form id="demo"><p><input type="text" v-model="msg"> {&#123;msg&#125;}</p><p><input type="checkbox" v-model="checked"> {&#123;checked ? &quot;yes&quot; : &quot;no&quot;&#125;}</p><p><input type="radio" v-model="picked" name="picked" value="one"><input type="radio" v-model="picked" name="picked" value="two"> {&#123;picked&#125;}</p><p><select v-model="selected"><option>one</option><option>two</option></select> {&#123;selected&#125;}</p><p><select v-model="multiSelect" multiple><option>one</option><option>two</option><option>three</option></select>{&#123;multiSelect&#125;}</p><p>data:<pre style="font-size:13px;background:transparent;line-height:1.5em">{&#123;$data | json 2&#125;}</pre></p></form></p>
+<script>
+new Vue({
+  el: '#demo',
+  data: {
+    msg      : 'hi!',
+    checked  : true,
+    picked   : 'one',
+    selected : 'two',
+    multiSelect: ['one', 'three']
+  }
+})
+</script>
+
+<h2 id="遅延更新"><a href="#遅延更新" class="headerlink" title="遅延更新"></a>遅延更新</h2><p>デフォルトで、<code>v-model</code> はデータと input を <code>input</code> イベントの直後に同期します。<code>lazy</code> 属性を追加することで、 <code>change</code> イベントの直後に同期させるように、挙動を変更することができます:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- "input" の代わりに、"change" の直後に同期する  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"msg"</span> <span class="attr">lazy</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="値を数値としてキャストする"><a href="#値を数値としてキャストする" class="headerlink" title="値を数値としてキャストする"></a>値を数値としてキャストする</h2><p>もし、ユーザの入力を自動的に数値として永続化したいのであれば、<code>v-model</code> で管理している input に <code>number</code> 属性を追加することができます:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"age"</span> <span class="attr">number</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Expressions-にバインドする"><a href="#Expressions-にバインドする" class="headerlink" title="Expressions にバインドする"></a>Expressions にバインドする</h2><blockquote>
+<p>0.12.12 以降のみ</p>
+</blockquote>
+<p>チェックボックスとラジオボックスの入力上で <code>v-model</code> を使用するとき、バインドされた値は boolean 値か、string のどちらかです:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- true または false のどちらかでトグル --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"toggle"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- このラジオボックスが選択されるとき、pick は "red" になります --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"pick"</span> <span class="attr">value</span>=<span class="string">"red"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>これは、時々何か他のものへ根本的な値をバインドしたいかもしれない時、少し制限することができます。ここでは、次のとおりにできます:</p>
+<p><strong>Checkbox</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"toggle"</span> <span class="attr">true-exp</span>=<span class="string">"a"</span> <span class="attr">false-exp</span>=<span class="string">"b"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// チェックしたとき:</span></span><br><span class="line">vm.toggle === vm.a</span><br><span class="line"><span class="comment">// チェックがはずされたとき:</span></span><br><span class="line">vm.toggle === vm.b</span><br></pre></td></tr></table></figure>
+<p><strong>Radio</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"pick"</span> <span class="attr">exp</span>=<span class="string">"a"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// チェックしたとき:</span></span><br><span class="line">vm.pick === vm.a</span><br></pre></td></tr></table></figure>
+<h2 id="動的な選択オプション"><a href="#動的な選択オプション" class="headerlink" title="動的な選択オプション"></a>動的な選択オプション</h2><p><code>&lt;select&gt;</code> 要素のオプションリストを動的にレンダリングする必要があれば、オプションが動的に変更されるとき、<code>v-model</code> は正しく同期しているため、<code>v-model</code>  と一緒に <code>options</code> 属性を利用することが推奨されています:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selected"</span> <span class="attr">options</span>=<span class="string">"myOptions"</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>あなたの data では、<code>myOptions</code> はオプションとして使いたい配列を指す keypath または expression である必要があります。</p>
+<p>options の配列にはプレーンなテキストを含めることができます。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">options = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+<p>または、<code>{text:&#39;&#39;, value:&#39;&#39;}</code> の形式のオブジェクトを含めることができます。このオブジェクト形式は、値とは異なるオプション文字列を表示することができます:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">options = [</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'A'</span>, <span class="attr">value</span>: <span class="string">'a'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'B'</span>, <span class="attr">value</span>: <span class="string">'b'</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>これは下記のようにレンダリングされます:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"a"</span>&gt;</span>A<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"b"</span>&gt;</span>B<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>value</code> はオブジェクトにすることもできます。</p>
+<blockquote>
+<p>0.12.11 以降のみ</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">options = [</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'A'</span>, <span class="attr">value</span>: &#123; <span class="attr">msg</span>: <span class="string">'hello'</span> &#125;&#125;,</span><br><span class="line">  &#123; <span class="attr">text</span>: <span class="string">'B'</span>, <span class="attr">value</span>: &#123; <span class="attr">msg</span>: <span class="string">'bye'</span> &#125;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="オプショングループ"><a href="#オプショングループ" class="headerlink" title="オプショングループ"></a>オプショングループ</h3><p>一方、オブジェクトは <code>{ label:&#39;&#39;, options:[...] }</code> の形式も取ることができます。このケースでは、<code>&lt;optgroup&gt;</code> としてレンダリングされます:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; <span class="attr">label</span>: <span class="string">'A'</span>, <span class="attr">options</span>: [<span class="string">'a'</span>, <span class="string">'b'</span>]&#125;,</span><br><span class="line">  &#123; <span class="attr">label</span>: <span class="string">'B'</span>, <span class="attr">options</span>: [<span class="string">'c'</span>, <span class="string">'d'</span>]&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>これは下記のようにレンダリングされます:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"A"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"a"</span>&gt;</span>a<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"b"</span>&gt;</span>b<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"B"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"c"</span>&gt;</span>c<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"d"</span>&gt;</span>d<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="オプションフィルタ"><a href="#オプションフィルタ" class="headerlink" title="オプションフィルタ"></a>オプションフィルタ</h3><p>あなたの元データがこれらの希望されるフォーマットでなく、動的にオプションを生成するためにデータを変換しなければならない場合がよくあります。DRY な変換をするために、<code>options</code> パラメータはフィルタをサポートしており、あなたの変換ロジックを再利用可能な<a href="/guide/custom-filter.html">カスタムフィルタ</a>で置き換えるのに役に立ちます。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(<span class="string">'extract'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value, keyToExtract</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> value.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item[keyToExtract]</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"selectedUser"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">options</span>=<span class="string">"users | extract 'name'"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上記フィルタは <code>[{ name: &#39;Bruce&#39; }, { name: &#39;Chuck&#39; }]</code> のようなデータを <code>[&#39;Bruce&#39;, &#39;Chuck&#39;]</code> に変換し、 正しいフォーマットになります。</p>
+<h3 id="静的なデフォルトオプション"><a href="#静的なデフォルトオプション" class="headerlink" title="静的なデフォルトオプション"></a>静的なデフォルトオプション</h3><blockquote>
+<p>0.12.10 以降のみ</p>
+</blockquote>
+<p>動的な生成オプションに加えて、1つの静的デフォルトオプションを提供することができます:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selectedUser"</span> <span class="attr">options</span>=<span class="string">"users"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>Select a user...<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>users</code> から作成された動的なオプションは、静的なオプションの後に追加されます。<code>v-model</code> の値が偽と評価される (<code>0</code> は除く) 値の場合、静的なオプションはデフォルトで選択されます。</p>
+<h2 id="入力デバウンス"><a href="#入力デバウンス" class="headerlink" title="入力デバウンス"></a>入力デバウンス</h2><p><code>debounce</code> パラメータは、入力値が Model に同期される前の各キーストローク後の最小遅延の設定を許可します。これは、例えば、先行入力自動補完向けに Ajax リクエストを作成するような、各更新時に高価な操作を実行しているときには便利です。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"msg"</span> <span class="attr">debounce</span>=<span class="string">"500"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>結果</strong></p>
+<p><div id="debounce-demo" class="demo">{&#123;msg&#125;}<br><input v-model="msg" debounce="500"></div></p>
+<script>
+new Vue({
+  el:'#debounce-demo',
+  data: { msg: 'edit me' }
+})
+</script>
+
+<p><code>debounce</code> パラメータはユーザーの入力イベントをデバウンスしないことに注意してください: それは基礎となるデータに “書き込み” 操作をデバウンスします。そのため、<code>debounce</code> を使用するときデータ変更に反応するために <code>vm.$watch()</code> を使用する必要があります。本物の DOM イベントをデバウンスするためには、<a href="/api/filters.html#debounce">debounce filter</a> を使います。<br>次: <a href="/guide/computed.html">Computed Properties</a></p>
+
+    <div class="footer">間違いを見つけた、またはドキュメントに貢献したいですか？<a href="https://github.com/vuejs-jp/012-jp.vuejs.org" target="_blank">Github からこのサイトを Fork しましょう</a>！</div>
+</div>
+
+                
+            </div>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tnir/vuejs-012-jp-outdated-docs-modal@012-jp-v2.1.0/prompt.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

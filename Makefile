@@ -1,5 +1,5 @@
 all: update
-	rm db.json
+	rm -rf db.json
 	hexo generate
 	cp -R ./todomvc public/examples
 	cp -R ../vue/test/unit/lib/ public/unit/lib

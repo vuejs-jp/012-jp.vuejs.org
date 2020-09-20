@@ -17,6 +17,32 @@ $ npm install
 $ hexo server
 ```
 
+## デプロイ
+
+### Node バージョン
+
+v6.3.0
+
+### デプロイ時のビルドに必要なもの
+
+```
+$ npm i -g grunt-cli webpack@1.11.0 hexo@3.4.0
+```
+
+### Vue レポジトリの用意
+```
+$ cd ../ # repo `012-jp.vuejs.org` があるディレクトリの親に移動
+$ git clone git@github.com:vuejs/vue.git # vue の repo を clone
+$ git checkout 0.12 # vue@v0.12 の branch へ checkout
+$ npm install # vue@v0.12 上での npm install
+```
+
+### make deploy の実行
+
+```
+$ make deploy
+```
+
 ## 翻訳プロジェクト発起人
 (アルファベット順)
 
